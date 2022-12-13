@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<%- include('../main/head.ejs', { title: "Register" }); -%>
+<script src='/js/registration.js'></script>
+</head>
+
+<body onload="Main.HandleNavControls(); Registration.HandleForm();">
+    <h1 class="alignCentre">REGISTER</h1>
+
+    <%- include('../main/nav.ejs', { user: user }); -%>
+
+    <%- include('./form_userAccess.ejs', { 
+        route: '/register',
+        method: 'POST',
+        doc_User: null
+    }); -%>
+</body>
+</html>

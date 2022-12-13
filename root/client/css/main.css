@@ -1,0 +1,99 @@
+body {
+    padding: 20px;
+}
+
+.alignCentre {
+    text-align: center;
+}
+.alignRight {
+    text-align: right;
+}
+
+.dispBlock {
+    display: block;
+}
+.dispInline {
+    display: inline;
+}
+
+.width50pct {
+    width: 50%;
+}
+
+/* Use with display: block; for horizontal centring */
+.marg0Auto {
+    margin: 0 auto;
+}
+.margBot5 {
+    margin-bottom: 5px;
+}
+.margBot20 {
+    margin-bottom: 20px;
+}
+.margBot50 {
+    margin-bottom: 50px;
+}
+.margLeft10 {
+    margin-left: 10px;
+}
+
+.highlightValid {
+    background-color: rgba(0, 255, 0, 0.25);
+}
+.highlightInvalid {
+    background-color: rgba(255, 0, 0, 0.25);
+}
+.highlightNone {
+    background-color: initial;
+}
+
+.posRel {
+    position: relative;
+}
+.posAbs {
+    position: absolute;
+}
+.articleCtrlAbsPos {
+    top: 0;
+    right: -75px;
+}
+
+/* FLEXBOX ITEMS */
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+.flexColTL {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.flexAlignCentre {
+    align-items: center;
+}
+.spaceBetween {
+    justify-content: space-between;
+}
+.flexRow.spaceBetween > * {
+    flex: 1 1 0;
+}
+/* Used as override, must be beneath items above */
+.dispInlineFlex {
+    display: inline-flex;
+}
+
+.removeAnchorStyles {
+    text-decoration: none;
+    color: inherit;
+}
+
+.authorImg {
+    width: 50px;
+    height: 50px;
+}
+
+.articleImg {
+    width: 500px;
+    height: 300px;
+}

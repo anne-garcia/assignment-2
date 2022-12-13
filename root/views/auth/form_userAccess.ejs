@@ -1,0 +1,40 @@
+<form id="form_userAccess">
+
+    <h2>Bio information (all fields required)</h2>
+
+    <div class="margBot20">
+        <label for="firstName" class="dispBlock">First Name</label>
+        <input name="firstName" type="text" value="<%= doc_User?.firstName %>" />
+    </div>
+
+    <div class="margBot20">
+        <label for="lastName" class="dispBlock">Last Name</label>
+        <input name="lastName" type="text" value="<%= doc_User?.lastName %>" />
+    </div>
+
+    <div class="margBot20">
+        <label for="profileImage" class="dispBlock">Profile Image</label>
+        <input name="profileImage" type="file" accept="image/*" />
+    </div>
+
+    <div class="margBot20">
+        <label for="email" class="dispBlock">Email</label>
+        <input name="email" type="email" value="<%= doc_User?.email %>" />
+    </div>
+
+    <div class="margBot20">
+        <label for="birthDate" class="dispBlock">Birth Date</label>
+        <input name="birthDate" type="date" value="<%= doc_User?.birthDate %>" />
+    </div>
+
+    <h2>Login information (all fields required)</h2>
+
+    <%- include('./prt_userAccessLoginFields.ejs', { doc_User: doc_User }); -%>
+
+    <div class="margBot20">
+        <label for="password2" class="dispBlock">Confirm Password</label>
+        <input name="password2" type="password" />
+    </div>
+
+    <button name="submitBtn" type="button" data-route="<%= route %>" data-method="<%= method %>">Submit</button>
+</form>

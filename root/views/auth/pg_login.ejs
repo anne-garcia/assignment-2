@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../main/head.ejs', { title: "Login" }); -%>
+</head>
+
+<body onload="Main.HandleNavControls();">
+    <h1 class="alignCentre">LOGIN</h1>
+
+    <%- include('../main/nav.ejs', { user: user }); -%>
+
+    <!-- Pulled out "userAccessLoginFields" to use distinctly here, because ony register and modifyUser really need to contend with the rest of the fields.
+    This can be kept very simple. -->
+    <form id="form_userAccess" action="/login" method="POST">
+        <%- include('./prt_userAccessLoginFields.ejs', { doc_User: null }); -%>
+        <button name="submitBtn" type="submit">Submit</button>
+    </form>
+</body>
+</html>

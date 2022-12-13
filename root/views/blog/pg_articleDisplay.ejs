@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<%- include('../main/head.ejs', { title: "Article" }); -%>
+<script src='/js/articleControls.js'></script>
+</head>
+
+<body onload="Main.HandleNavControls(); ArticleControls.Init();">
+    <h1 class="alignCentre">Welcome to Tater-Town!</h1>
+
+    <%- include('../main/nav.ejs', { user: user }); -%>
+
+    <div class="posRel width50pct marg0Auto">
+        <div class="bg-light p-3">
+            <%- include('./prt_articleDisp.ejs', { docArticle: doc_Article }); -%>
+
+            <img class="articleImg dispBlock marg0Auto margBot20" src="<%= doc_Article.image %>">
+            <p><%= doc_Article.content %></p>
+        </div>
+
+        <% if(user && user.id == doc_Article.authorId) { %>
+            <%- include('./prt_articleControls.ejs', { 
+                articleId: doc_Article._id,
+                articleHeadline: doc_Article.headline
+            }); -%>
+        <% } %>
+    </div>
+</body>
+</html>

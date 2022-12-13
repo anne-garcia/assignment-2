@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<%- include('../main/head.ejs', { title: "" + header + " Article" }); -%>
+<script src='/js/articleEdit.js'></script>
+</head>
+
+<body onload="Main.HandleNavControls(); ArticleEdit.HandleForm();">
+    <h1 class="alignCentre"><%= header %> Article</h1>
+
+    <%- include('../main/nav.ejs', { user: user }); -%>
+
+    <%- include('./form_articleEdit.ejs', {
+        route: route,
+        method: method,
+        headline: headline,
+        subHead: subHead,
+        content: content
+    }); -%>
+
+</body>
+</html>

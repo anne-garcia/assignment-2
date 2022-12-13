@@ -1,0 +1,26 @@
+<!-- Had to remove action & method and use JS, since form can't use "patch" -->
+<form id="form_articleEdit">
+
+    <div class="margBot20">
+        <label for="headline" class="dispBlock">Headline</label>
+        <input name="headline" type="text" value="<%= headline %>" />
+    </div>
+
+    <div class="margBot20">
+        <label for="subHead" class="dispBlock">Sub Headline</label>
+        <input name="subHead" type="text" value="<%= subHead %>" />
+    </div>
+
+    <div class="margBot20">
+        <label for="image" class="dispBlock">Image</label>
+        <!-- * Not setting image for edit since we're not really using uploaded images. They'll just have to pick another and get another cat. -->
+        <input name="image" type="file" accept="image/*" />
+    </div>
+
+    <div class="margBot20">
+        <label for="content" class="dispBlock">Content</label>
+        <textarea name="content"><%= content %></textarea>
+    </div>
+
+    <button name="submitBtn" type="button" data-route="<%= route %>" data-method="<%= method %>">Submit</button>
+</form>

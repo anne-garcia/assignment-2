@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<%- include('../main/head.ejs', { title: "Modify Account" }); -%>
+<script src='/js/registration.js'></script>
+</head>
+
+<body onload="Main.HandleNavControls(); Registration.HandleForm();">
+    <h1 class="alignCentre">Modify Account details</h1>
+
+    <%- include('../main/nav.ejs', { user: user }); -%>
+
+    <%- include('./form_userAccess.ejs', { 
+        route: '/modifyAccount',
+        method: 'PATCH',
+        doc_User: doc_User
+    }); -%>
+</body>
+</html>

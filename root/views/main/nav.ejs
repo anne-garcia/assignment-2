@@ -1,0 +1,31 @@
+<div class="flexRow spaceBetween margBot50">
+
+    <!-- Content-based user controls -->
+    <% if(!!user) { %>
+    <div>
+        <input id="BtnCreateArticle" class="margBot5" type="button" value="+ CREATE ARTICLE" />
+    </div>
+    <% } %>
+
+    <!-- Nav -->
+    <nav class="alignCentre">
+        <a href="/">Home</a> |
+        <% if(!user) { %>
+        <a href="/login">Login</a> |
+        <% } %>  
+        <a href="/register">Register</a>
+    </nav>
+
+    <!-- Account-based user controls -->
+    <% if(!!user) { %>
+    <div class="alignRight">
+        <div class="flexColTL dispInlineFlex">
+            <span class="margBot5"><strong>Welcome <%= user.username %></strong></span>
+            <input id="BtnLogout" class="margBot5" type="button" value="Logout" />
+            <input id="BtnModifyAccount" class="margBot5" type="button" value="Modify Account" />
+            <input id="BtnDeleteAccount" class="margBot5" type="button" value="Delete Account" />
+        </div>
+    </div>
+    <% } %>
+
+</div>

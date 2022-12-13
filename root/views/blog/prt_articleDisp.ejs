@@ -1,0 +1,25 @@
+<div>
+    <h2><%= docArticle.headline %></h2>
+    <h3><%= docArticle.subHead %></h3>
+    
+    <!-- Image files are also random cats from previously given generator -->
+    <div class="flexRow flexAlignCentre margBot20">
+
+        <% if(docArticle.author?.profileImage) { %>
+            <img class="authorImg" src="<%= docArticle.author.profileImage %>">
+        <% } else { %>
+             <!-- Use grey avatar instead, when no author known -->
+            <img class="authorImg" src="/assets/avatar.png">
+        <% } %>
+
+        <!-- Date and name stacked to be closer to image size, looks nicer. -->
+        <div class="margLeft10"> 
+            <div><%= docArticle.creationDate %></div>
+            <% if(docArticle.author) { %>
+                <div><%= docArticle.author.firstName %> <%= docArticle.author.lastName %></div>
+            <% } else { %>
+                <div>Author Unknown</div>
+            <% } %>
+        </div>
+    </div>
+</div>

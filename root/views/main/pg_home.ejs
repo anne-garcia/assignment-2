@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<%- include('./head.ejs', { title: "Home" }); -%>
+<script src='/js/articleControls.js'></script>
+</head>
+
+<body onload="Main.HandleNavControls(); ArticleControls.Init();">
+    <h1 class="alignCentre">Welcome to Tater-Town!</h1>
+
+    <%- include('./nav.ejs', { user: user }); -%>
+
+    <ul class="list-group">
+    <% for(const docArticle of docArr_articles) { %>
+        <li class="list-group-item">
+            <div class="posRel width50pct marg0Auto">
+                <div class="bg-light p-3">
+                    <a class="dispBlock removeAnchorStyles" href="/articles/<%= docArticle._id %>">
+                        <%- include('../blog/prt_articleDisp.ejs', { docArticle: docArticle }); -%>
+                    </a>
+
+                    <img class="articleImg dispBlock marg0Auto margBot20" src="<%= docArticle.image %>">
+                    <p><%= docArticle.content %></p>
+                </div>
+
+                <% if(user && user.id == docArticle.authorId) { %>
+                    <%- include('../blog/prt_articleControls.ejs', { 
+                        articleId: docArticle._id,
+                        articleHeadline: docArticle.headline
+                    }); -%>
+                <% } %>
+            </div>
+        </li>
+    <% } %>
+</ul>
+
+</body>
+</html>
